@@ -1,0 +1,36 @@
+services:
+  api:
+    image: 'oven/bun:latest'
+    user: 'bun'
+    working_dir: '/mantle'
+    env_file: '.env'
+    volumes:
+      - './mantle:/mantle'
+    ports:
+      - '8787:8787'
+    entrypoint: ['sh', '-c', 'bun install && bun run dev']
+    restart: unless-stopped
+
+  ai:
+    image: 'oven/bun:latest'
+    user: 'bun'
+    working_dir: '/cloud'
+    env_file: '.env'
+    volumes:
+      - './cloud:/cloud'
+    ports:
+      - '9898:9898'
+    entrypoint: ['sh', '-c', 'bun install && bun run dev']
+    restart: unless-stopped
+
+  frontend:
+    image: 'oven/bun:latest'
+    user: 'bun'
+    working_dir: '/crust'
+    env_file: './crust/.config/local.env'
+    volumes:
+      - './crust:/crust'
+    ports:
+      - '3000:3000'
+    entrypoint: ['sh', '-c', 'bun install && bun run dev -- --port 3000']
+    restart: unless-stopped

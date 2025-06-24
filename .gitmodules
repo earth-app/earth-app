@@ -1,0 +1,9 @@
+[submodule "mantle"]
+	path = mantle
+	url = https://github.com/earth-app/mantle
+[submodule "crust"]
+	path = crust
+	url = https://github.com/earth-app/crust
+[submodule "cloud"]
+	path = cloud
+	url = https://github.com/earth-app/cloud
