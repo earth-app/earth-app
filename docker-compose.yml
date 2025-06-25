@@ -1,5 +1,5 @@
 services:
-  api:
+  backend:
     image: 'oven/bun:latest'
     user: 'bun'
     working_dir: '/mantle'
@@ -32,5 +32,5 @@ services:
       - './crust:/crust'
     ports:
       - '3000:3000'
-    entrypoint: ['sh', '-c', 'bun install && bun run dev -- --port 3000']
+    entrypoint: ['sh', '-c', 'bun install && bun run dev']
     restart: unless-stopped
