@@ -4,19 +4,19 @@
 			<InfoCard
 				title="Proactive"
 				icon="lucide:handshake"
-				description="Prioritize real-world connections with people around you."
+				description="Prioritize finding something that suits you, not just what looks good on a profile."
 				class="absolute bg-orange-500 shadow-lg shadow-orange-500/50 left-1/24 top-1/6 min-w-50 w-1/6 motion-delay-600 hover:opacity-90 transform"
 			/>
 			<InfoCard
 				title="Personal"
 				icon="material-symbols:person-add-rounded"
-				description="Connect with individuals, not just profiles. You control your experience, not us."
+				description="Connect with culture, community, and creative outlets just for you."
 				class="absolute bg-blue-500 shadow-lg shadow-blue-500/50 right-1/24 top-1/4 min-w-50 w-1/6 motion-delay-1100 hover:opacity-90 transform"
 			/>
 			<InfoCard
 				title="Private"
 				icon="charm:shield-tick"
-				description="Standard end-to-end encryption ensures you prioritize going outside. When was the last time you did that?"
+				description="Standard end-to-end encryption ensures you prioritize novelty over noise."
 				class="absolute bg-green-500 shadow-lg shadow-green-500/50 left-1/16 top-3/5 min-w-50 w-1/6 motion-delay-1600 hover:opacity-90 transform"
 			/>
 			<InfoCard
@@ -48,8 +48,8 @@
 				/>
 			</a>
 
-			<h1 class="font-title text-5xl font-bold mb-2">Meet Real People.</h1>
-			<h1 class="font-title text-5xl font-bold mb-2">Try New Things.</h1>
+			<h1 class="font-title text-4xl font-bold mb-2">Find Your Novelty.</h1>
+			<h1 class="font-title text-4xl font-bold mb-2">Try New Things.</h1>
 			<h1 class="font-title text-6xl font-bold mb-2 text-blue-500">Discover the World.</h1>
 			<h3 class="hover:text-primary transition font-medium">
 				<a href="https://app.earth-app.com">Click to Get Started.</a>
