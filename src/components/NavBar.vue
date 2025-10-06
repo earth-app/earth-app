@@ -22,7 +22,6 @@
 				name="uil:github"
 				title="GitHub"
 				size="36px"
-				style="color: black"
 			/>
 		</a>
 		<a
@@ -33,19 +32,31 @@
 				name="uil:instagram"
 				title="Instagram"
 				size="36px"
-				style="color: black"
 			/>
 		</a>
 		<a
-			href="https://twitter.com/theearthapp"
+			href="https://twitter.com/the_earth_app"
 			target="_blank"
 		>
 			<Icon
 				name="uil:twitter"
 				title="Twitter"
 				size="36px"
-				style="color: black"
+			/>
+		</a>
+		<a
+			href="https://patreon.com/gmitch215"
+			target="_blank"
+		>
+			<Icon
+				name="mdi:patreon"
+				title="Patreon"
+				size="36px"
 			/>
 		</a>
 	</div>
 </template>
+
+<script setup lang="ts">
+import { SITE_NAME } from '#imports';
+</script>

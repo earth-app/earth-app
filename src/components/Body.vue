@@ -1,35 +1,11 @@
 <template>
 	<main class="min-h-screen h-full pb-8 text-white">
 		<div class="flex flex-col items-center justify-center w-full">
-			<InfoCard
-				title="Proactive"
-				icon="lucide:handshake"
-				description="Prioritize finding something that suits you, not just what looks good on a profile."
-				class="absolute bg-orange-500 shadow-lg shadow-orange-500/50 left-1/24 top-1/6 min-w-50 w-1/6 motion-delay-600 hover:opacity-90 transform"
-			/>
-			<InfoCard
-				title="Personal"
-				icon="material-symbols:person-add-rounded"
-				description="Connect with culture, community, and creative outlets just for you."
-				class="absolute bg-blue-500 shadow-lg shadow-blue-500/50 right-1/24 top-1/4 min-w-50 w-1/6 motion-delay-1100 hover:opacity-90 transform"
-			/>
-			<InfoCard
-				title="Private"
-				icon="charm:shield-tick"
-				description="Standard end-to-end encryption ensures you prioritize novelty over noise."
-				class="absolute bg-green-500 shadow-lg shadow-green-500/50 left-1/16 top-3/5 min-w-50 w-1/6 motion-delay-1600 hover:opacity-90 transform"
-			/>
-			<InfoCard
-				title="Powerful"
-				icon="mdi:gear"
-				description="AI-powered features enchance your experience, keeping you engaged, informed, and connected."
-				class="absolute bg-purple-500 shadow-lg shadow-purple-500/50 right-1/12 top-2/3 min-w-50 w-1/6 motion-delay-2100 hover:opacity-90 transform"
-			/>
-
+			<h1 class="text-4xl font-bold mt-8">{{ SITE_NAME }}</h1>
 			<a
 				ref="containerRef"
 				href="https://app.earth-app.com"
-				class="relative h-80 w-80 mb-32 mt-28"
+				class="relative my-26 size-48 md:size-64 lg:size-72"
 			>
 				<img
 					src="/favicon.png"
@@ -42,15 +18,45 @@
 					:key="idx"
 					:name="icon.name"
 					:title="`Satellite ${idx + 1}`"
-					size="calc(12px + 1.5vw)"
-					class="absolute"
+					size="calc(12px + 1vw + 1vh)"
+					class="absolute z-20"
 					:style="iconStyle(idx, icon.offset, icon.radius)"
 				/>
 			</a>
+			<InfoCard
+				title="Proactive"
+				icon="lucide:handshake"
+				description="Prioritize finding something that suits you, not just what looks good on a profile."
+				class="md:absolute my-2 md:my-0 bg-orange-500 shadow-lg shadow-orange-500/50 left-1/24 top-1/7 min-w-50 w-1/6 motion-delay-600 hover:opacity-90 transform"
+			/>
+			<InfoCard
+				title="Personal"
+				icon="material-symbols:person-add-rounded"
+				description="Connect with culture, community, and creative outlets just for you."
+				class="md:absolute my-2 md:my-0 bg-blue-500 shadow-lg shadow-blue-500/50 right-1/24 top-1/5 min-w-50 w-1/6 motion-delay-1100 hover:opacity-90 transform"
+			/>
+			<InfoCard
+				title="Private"
+				icon="charm:shield-tick"
+				description="Standard end-to-end encryption ensures you prioritize novelty over noise."
+				class="md:absolute my-2 md:my-0 bg-green-500 shadow-lg shadow-green-500/50 left-1/16 top-3/7 min-w-50 w-1/6 motion-delay-1600 hover:opacity-90 transform"
+			/>
+			<InfoCard
+				title="Powerful"
+				icon="mdi:gear"
+				description="AI-powered features enchance your experience, keeping you engaged, informed, and connected."
+				class="md:absolute my-2 md:my-0 bg-purple-500 shadow-lg shadow-purple-500/50 right-1/12 top-1/2 min-w-50 w-1/6 motion-delay-2100 hover:opacity-90 transform"
+			/>
 
-			<h1 class="font-title text-4xl font-bold mb-2">Find Your Novelty.</h1>
-			<h1 class="font-title text-4xl font-bold mb-2">Try New Things.</h1>
-			<h1 class="font-title text-6xl font-bold mb-2 text-blue-500">Discover the World.</h1>
+			<h1 class="font-title text-center text-2xl md:text-3xl mb-2 mt-8 md:mt-8 lg:mt-0">
+				Find Your Novelty.
+			</h1>
+			<h1 class="font-title text-center text-2xl md:text-3xl mb-2">Try New Things.</h1>
+			<h1
+				class="font-title text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-blue-500"
+			>
+				Discover the World.
+			</h1>
 			<h3 class="hover:text-primary transition font-medium">
 				<a href="https://app.earth-app.com">Click to Get Started.</a>
 			</h3>

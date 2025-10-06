@@ -6,11 +6,11 @@
 			<Icon
 				v-if="icon"
 				:name="icon"
-				size="48px"
+				size="3vw"
 			/>
-			<h2 class="font-semibold ml-4">{{ title }}</h2>
+			<h2 class="font-semibold ml-4 text-sm md:text-md lg:text-lg">{{ title }}</h2>
 		</div>
-		<p>{{ description }}</p>
+		<p class="text-xs md:text-sm lg:text-md">{{ description }}</p>
 	</div>
 </template>
 
