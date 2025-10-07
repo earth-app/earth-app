@@ -21,7 +21,7 @@
 			<Icon
 				name="uil:github"
 				title="GitHub"
-				size="36px"
+				size="calc(12px + 1.5vw + 1.5vh)"
 			/>
 		</a>
 		<a
@@ -31,7 +31,7 @@
 			<Icon
 				name="uil:instagram"
 				title="Instagram"
-				size="36px"
+				size="calc(12px + 1.5vw + 1.5vh)"
 			/>
 		</a>
 		<a
@@ -41,7 +41,7 @@
 			<Icon
 				name="uil:twitter"
 				title="Twitter"
-				size="36px"
+				size="calc(12px + 1.5vw + 1.5vh)"
 			/>
 		</a>
 		<a
@@ -51,7 +51,7 @@
 			<Icon
 				name="mdi:patreon"
 				title="Patreon"
-				size="36px"
+				size="calc(12px + 1.5vw + 1.5vh)"
 			/>
 		</a>
 	</div>

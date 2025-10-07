@@ -5,7 +5,7 @@
 			<a
 				ref="containerRef"
 				href="https://app.earth-app.com"
-				class="relative my-26 size-48 md:size-64 lg:size-72"
+				class="relative my-12 sm:my-16 md:my-22 size-24 sm:size-32 md:size-40 lg:size-56"
 			>
 				<img
 					src="/favicon.png"
@@ -23,11 +23,23 @@
 					:style="iconStyle(idx, icon.offset, icon.radius)"
 				/>
 			</a>
+			<h1 class="font-title text-center text-2xl md:text-3xl mb-2 mt-8 md:mt-8 lg:mt-0">
+				Find Your Novelty.
+			</h1>
+			<h1 class="font-title text-center text-2xl md:text-3xl mb-2">Try New Things.</h1>
+			<h1
+				class="font-title text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-blue-500"
+			>
+				Discover the World.
+			</h1>
+			<h3 class="hover:text-primary transition font-medium">
+				<a href="https://app.earth-app.com">Click to Get Started.</a>
+			</h3>
 			<InfoCard
 				title="Proactive"
 				icon="lucide:handshake"
 				description="Prioritize finding something that suits you, not just what looks good on a profile."
-				class="md:absolute my-2 md:my-0 bg-orange-500 shadow-lg shadow-orange-500/50 left-1/24 top-1/7 min-w-50 w-1/6 motion-delay-600 hover:opacity-90 transform"
+				class="md:absolute mb-2 mt-8 md:my-0 bg-orange-500 shadow-lg shadow-orange-500/50 left-1/24 top-1/7 min-w-50 w-1/6 motion-delay-600 hover:opacity-90 transform"
 			/>
 			<InfoCard
 				title="Personal"
@@ -47,19 +59,6 @@
 				description="AI-powered features enchance your experience, keeping you engaged, informed, and connected."
 				class="md:absolute my-2 md:my-0 bg-purple-500 shadow-lg shadow-purple-500/50 right-1/12 top-1/2 min-w-50 w-1/6 motion-delay-2100 hover:opacity-90 transform"
 			/>
-
-			<h1 class="font-title text-center text-2xl md:text-3xl mb-2 mt-8 md:mt-8 lg:mt-0">
-				Find Your Novelty.
-			</h1>
-			<h1 class="font-title text-center text-2xl md:text-3xl mb-2">Try New Things.</h1>
-			<h1
-				class="font-title text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-blue-500"
-			>
-				Discover the World.
-			</h1>
-			<h3 class="hover:text-primary transition font-medium">
-				<a href="https://app.earth-app.com">Click to Get Started.</a>
-			</h3>
 		</div>
 	</main>
 </template>
