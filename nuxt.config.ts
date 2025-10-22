@@ -13,11 +13,12 @@ export default defineNuxtConfig({
 		preset: 'static',
 		prerender: {
 			crawlLinks: true,
-			routes: ['/']
+			routes: ['/', '/sitemap.xml']
 		}
 	},
-
 	modules: [
+		'@nuxtjs/sitemap',
+		'@nuxtjs/robots',
 		[
 			'@nuxtjs/google-fonts',
 			{
@@ -36,5 +37,8 @@ export default defineNuxtConfig({
 				}
 			}
 		]
-	]
+	],
+	sitemap: {
+		sources: ['https://app.earth-app.com/sitemap.xml']
+	}
 });
