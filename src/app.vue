@@ -1,17 +1,10 @@
 <template>
-	<div
-		id="app"
-		class="bg-gray-800 min-h-screen min-w-screen h-full w-full"
-	>
-		<NavBar />
-		<Body />
-	</div>
+	<NuxtLayout>
+		<NuxtPage />
+	</NuxtLayout>
 </template>
 
 <script setup>
-import Body from './components/Body.vue';
-import NavBar from './components/NavBar.vue';
-
 useSeoMeta({
 	charset: 'utf-8',
 	viewport: {

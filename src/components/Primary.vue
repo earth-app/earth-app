@@ -45,7 +45,7 @@
 				title="Personal"
 				icon="material-symbols:person-add-rounded"
 				description="Connect with culture, community, and creative outlets just for you."
-				class="md:absolute my-2 md:my-0 bg-blue-500 shadow-lg shadow-blue-500/50 right-1/24 top-1/5 min-w-50 w-1/6 motion-delay-1100 hover:opacity-90 transform"
+				class="md:absolute my-2 md:my-0 bg-blue-500 shadow-lg shadow-blue-500/50 right-1/24 top-1/6 min-w-50 w-1/6 motion-delay-1100 hover:opacity-90 transform"
 			/>
 			<InfoCard
 				title="Private"
@@ -57,7 +57,7 @@
 				title="Powerful"
 				icon="mdi:gear"
 				description="AI-powered features enchance your experience, keeping you engaged, informed, and connected."
-				class="md:absolute my-2 md:my-0 bg-purple-500 shadow-lg shadow-purple-500/50 right-1/12 top-1/2 min-w-50 w-1/6 motion-delay-2100 hover:opacity-90 transform"
+				class="md:absolute my-2 md:my-0 bg-purple-500 shadow-lg shadow-purple-500/50 right-1/48 top-5/13 min-w-50 w-1/6 motion-delay-2100 hover:opacity-90 transform"
 			/>
 		</div>
 	</main>

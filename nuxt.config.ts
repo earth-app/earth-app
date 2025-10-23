@@ -39,6 +39,6 @@ export default defineNuxtConfig({
 		]
 	],
 	sitemap: {
-		sources: ['https://app.earth-app.com/sitemap.xml']
+		sources: ['https://app.earth-app.com/__sitemap__/en-US.xml']
 	}
 });
