@@ -16,10 +16,3 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 }
-
-@media (min-width: 768px) {
-	html,
-	body {
-		overflow-y: hidden;
-	}
-}
