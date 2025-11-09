@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite';
+import { defineOrganization } from 'nuxt-schema-org/schema';
 
 export default defineNuxtConfig({
 	ssr: true,
@@ -16,9 +17,15 @@ export default defineNuxtConfig({
 			routes: ['/', '/sitemap.xml']
 		}
 	},
+	app: {
+		head: {
+			link: [{ rel: 'canonical', href: 'https://earth-app.com' }]
+		}
+	},
 	modules: [
 		'@nuxtjs/sitemap',
 		'@nuxtjs/robots',
+		'nuxt-schema-org',
 		[
 			'@nuxtjs/google-fonts',
 			{
@@ -40,5 +47,12 @@ export default defineNuxtConfig({
 	],
 	sitemap: {
 		sources: ['https://app.earth-app.com/__sitemap__/en-US.xml']
+	},
+	schemaOrg: {
+		identity: defineOrganization({
+			name: 'The Earth App',
+			logo: '/favicon.png',
+			url: 'https://earth-app.com'
+		})
 	}
 });
