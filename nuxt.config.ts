@@ -22,6 +22,50 @@ export default defineNuxtConfig({
 			link: [{ rel: 'canonical', href: 'https://earth-app.com' }]
 		}
 	},
+	routeRules: {
+		'/api': {
+			redirect: {
+				to: 'https://api.earth-app.com',
+				statusCode: 301
+			}
+		},
+		'/app': {
+			redirect: {
+				to: 'https://app.earth-app.com',
+				statusCode: 301
+			}
+		},
+		'/docs': {
+			redirect: {
+				to: 'https://docs.earth-app.com',
+				statusCode: 301
+			}
+		},
+		'/about': {
+			redirect: {
+				to: 'https://app.earth-app.com/about',
+				statusCode: 301
+			}
+		},
+		'/tos': {
+			redirect: {
+				to: 'https://app.earth-app.com/terms-of-service',
+				statusCode: 301
+			}
+		},
+		'/terms-of-service': {
+			redirect: {
+				to: 'https://app.earth-app.com/terms-of-service',
+				statusCode: 301
+			}
+		},
+		'/privacy-policy': {
+			redirect: {
+				to: 'https://app.earth-app.com/privacy-policy',
+				statusCode: 301
+			}
+		}
+	},
 	modules: [
 		'@nuxtjs/sitemap',
 		'@nuxtjs/robots',
