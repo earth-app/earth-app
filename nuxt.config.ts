@@ -19,7 +19,13 @@ export default defineNuxtConfig({
 	},
 	app: {
 		head: {
-			link: [{ rel: 'canonical', href: 'https://earth-app.com' }]
+			link: [
+				{ rel: 'canonical', href: 'https://earth-app.com' },
+				{ rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
+				{ rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
+				{ rel: 'preconnect', href: 'https://api.earth-app.com' },
+				{ rel: 'dns-prefetch', href: 'https://api.earth-app.com', crossorigin: 'use-credentials' }
+			]
 		}
 	},
 	routeRules: {
