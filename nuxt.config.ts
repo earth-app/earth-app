@@ -35,6 +35,12 @@ export default defineNuxtConfig({
 				statusCode: 301
 			}
 		},
+		'/blog': {
+			redirect: {
+				to: 'https://blog.earth-app.com',
+				statusCode: 301
+			}
+		},
 		'/docs': {
 			redirect: {
 				to: 'https://docs.earth-app.com',
