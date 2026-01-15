@@ -3,8 +3,8 @@ import { defineOrganization } from 'nuxt-schema-org/schema';
 
 export default defineNuxtConfig({
 	ssr: true,
-	compatibilityDate: '2024-11-01',
-	devtools: { enabled: true },
+	compatibilityDate: '2025-12-13',
+	devtools: { enabled: process.env.NODE_ENV !== 'production' },
 	srcDir: 'src',
 	css: ['~/assets/css/main.css'],
 	vite: {
