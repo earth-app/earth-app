@@ -23,12 +23,21 @@
 					:style="iconStyle(idx, icon.offset, icon.radius)"
 				/>
 			</a>
-			<h1 class="font-title text-center text-2xl md:text-3xl mb-2 mt-8 md:mt-8 lg:mt-0">
+			<h1
+				class="font-title text-center text-2xl md:text-3xl mb-2 mt-8 md:mt-8 lg:mt-0 hover:cursor-pointer"
+				@click="navigateTo('https://app.earth-app.com', { external: true })"
+			>
 				Find Your Novelty.
 			</h1>
-			<h1 class="font-title text-center text-2xl md:text-3xl mb-2">Try New Things.</h1>
 			<h1
-				class="font-title text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-blue-500"
+				class="font-title text-center text-2xl md:text-3xl mb-2 hover:cursor-pointer"
+				@click="navigateTo('https://app.earth-app.com', { external: true })"
+			>
+				Try New Things.
+			</h1>
+			<h1
+				class="font-title text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-blue-500 hover:cursor-pointer"
+				@click="navigateTo('https://app.earth-app.com', { external: true })"
 			>
 				Discover the World.
 			</h1>
