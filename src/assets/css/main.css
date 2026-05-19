@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@nuxt/ui';
 @plugin "tailwindcss-motion";
 
 @theme {
@@ -6,6 +7,10 @@
 	--color-secondary: #174f96;
 	--color-accent: #f8f9fb;
 	--color-accent-secondary: #532e1f;
+
+	--ui-primary: var(--color-primary);
+	--ui-secondary: var(--color-secondary);
+	--ui-success: #69ec42;
 
 	--font-title: 'Noto Sans', sans-serif;
 }
