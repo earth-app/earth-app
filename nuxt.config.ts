@@ -8,7 +8,10 @@ export default defineNuxtConfig({
 	srcDir: 'src',
 	css: ['~/assets/css/main.css'],
 	vite: {
-		plugins: [tailwindcss()]
+		plugins: [tailwindcss()],
+		optimizeDeps: {
+			include: ['@vue/devtools-core', '@vue/devtools-kit']
+		}
 	},
 	nitro: {
 		preset: 'static',
@@ -81,6 +84,9 @@ export default defineNuxtConfig({
 	modules: [
 		'@nuxtjs/sitemap',
 		'@nuxtjs/robots',
+		'@nuxt/ui',
+		'@nuxt/hints',
+		'@nuxt/image',
 		'nuxt-schema-org',
 		[
 			'@nuxtjs/google-fonts',
