@@ -1,15 +1,11 @@
 <template>
 	<OnboardingQuestTimeline
-		ref="timeline"
 		:quest="onboardingQuest"
-		@next="next"
 		@done="done"
 	/>
 </template>
 
 <script setup lang="ts">
-import type QuestTimeline from './QuestTimeline.vue';
-
 const emit = defineEmits<{
 	(event: 'done'): void;
 }>();
@@ -86,31 +82,6 @@ const onboardingQuest: Quest = {
 };
 
 const toast = useToast();
-
-const timeline = ref<InstanceType<typeof QuestTimeline>>();
-
-function next() {
-	const currentIndex = timeline.value?.currentIndex;
-	const currentStep = timeline.value?.currentStep;
-	if (!currentStep || currentIndex === undefined) return;
-
-	toast.add({
-		title: `Step ${currentIndex + 1}: ${currentStep.title}`,
-		description: currentStep.description,
-		icon: 'mdi:check-circle',
-		actions: currentStep.link
-			? [
-					{
-						label: 'Go',
-						onClick: () => {
-							navigateTo(currentStep.link!, { external: true });
-						}
-					}
-				]
-			: undefined,
-		duration: 10000
-	});
-}
 
 function done() {
 	toast.add({
