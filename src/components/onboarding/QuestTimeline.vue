@@ -486,8 +486,19 @@ defineExpose({
 // ─── Captured blobs (one slot per quest step) ────────────────────────────────
 
 const currentBlobs = ref<Blob[]>(Array(props.quest.steps.length).fill(undefined));
-const currentImages = computed(() =>
-	currentBlobs.value.map((blob) => (blob ? URL.createObjectURL(blob) : undefined))
+const currentImages = ref<(string | undefined)[]>([]);
+
+watch(
+	currentBlobs,
+	(blobs) => {
+		// Revoke old
+		currentImages.value.forEach((url) => {
+			if (url) URL.revokeObjectURL(url);
+		});
+		// Create new
+		currentImages.value = blobs.map((blob) => (blob ? URL.createObjectURL(blob) : undefined));
+	},
+	{ deep: true }
 );
 
 onUnmounted(() => {
