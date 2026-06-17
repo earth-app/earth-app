@@ -79,6 +79,12 @@ export default defineNuxtConfig({
 				to: 'https://app.earth-app.com/privacy-policy',
 				statusCode: 301
 			}
+		},
+		'/support': {
+			redirect: {
+				to: 'https://app.earth-app.com/support',
+				statusCode: 301
+			}
 		}
 	},
 	modules: [
