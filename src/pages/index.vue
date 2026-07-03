@@ -10,6 +10,20 @@
 			>Try Onboarding Again</UButton
 		>
 
+		<div class="flex flex-col sm:flex-row my-8">
+			<NuxtLink
+				to="https://apps.apple.com/us/app/the-earth-app/id6771985151?itscg=30200&itsct=apps_box_badge&mttnsubad=6771985151"
+				target="_blank"
+				style="display: inline-block"
+			>
+				<img
+					src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1782172800"
+					alt="Download on the App Store"
+					style="width: 246px; height: 82px; vertical-align: middle; object-fit: contain"
+				/>
+			</NuxtLink>
+		</div>
+
 		<UModal
 			v-model:open="showModal"
 			title="Welcome to The Earth App!"
