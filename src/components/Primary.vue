@@ -2,10 +2,11 @@
 	<main class="text-white">
 		<div class="flex flex-col items-center justify-center w-full">
 			<h1 class="text-4xl font-bold mt-8">{{ appConfig.name }}</h1>
+			<h2 class="text-2xl font-semibold mt-2 text-blue-400">The Anti-Doomscroll.</h2>
 			<NuxtLink
 				to="https://app.earth-app.com"
 				external
-				class="relative my-12 sm:my-16 md:my-22 size-24 sm:size-32 md:size-40 lg:size-56"
+				class="relative my-12 sm:my-16 md:my-22 size-24 sm:size-32 md:size-40 lg:size-48"
 			>
 				<NuxtImg
 					src="/favicon.png"
@@ -54,7 +55,8 @@ const icons = [
 	{ name: 'circum:satellite-1', speed: 6 },
 	{ name: 'material-symbols-light:satellite-alt-outline', speed: 7 },
 	{ name: 'solar:rocket-bold-duotone', speed: 4, offset: 60, radius: 75 },
-	{ name: 'mdi:space-station', speed: 5, offset: 120 }
+	{ name: 'mdi:space-station', speed: 5, offset: 120 },
+	{ name: 'mdi:bottle-rocket', speed: 3, offset: 80, radius: 70 }
 ];
 
 const angles = icons.map(() => ref(0));
