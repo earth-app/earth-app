@@ -47,4 +47,30 @@ useSeoMeta({
 	appleMobileWebAppCapable: 'yes',
 	appleMobileWebAppStatusBarStyle: 'black'
 });
+
+useSchemaOrg([
+	defineWebSite({
+		name: appConfig.name,
+		description: appConfig.description,
+		inLanguage: 'en-US'
+	}),
+	defineSoftwareApp({
+		'@type': ['MobileApplication', 'WebApplication'],
+		name: appConfig.name,
+		description:
+			'The anti-doomscroll app to explore hobbies, sports, and passions with real people.',
+		applicationCategory: 'LifestyleApplication',
+		operatingSystem: 'iOS, Web',
+		downloadUrl: 'https://apps.apple.com/app/the-earth-app/id6771985151',
+		featureList: [
+			'Discover hobbies, sports, and passions',
+			'Connect and explore with real people',
+			'Guided onboarding quests'
+		],
+		offers: {
+			price: '0',
+			priceCurrency: 'USD'
+		}
+	})
+]);
 </script>
