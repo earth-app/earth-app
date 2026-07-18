@@ -50,12 +50,6 @@ export default defineNuxtConfig({
 				statusCode: 301
 			}
 		},
-		'/docs': {
-			redirect: {
-				to: 'https://docs.earth-app.com',
-				statusCode: 301
-			}
-		},
 		'/about': {
 			redirect: {
 				to: 'https://app.earth-app.com/about',
@@ -82,7 +76,13 @@ export default defineNuxtConfig({
 		},
 		'/support': {
 			redirect: {
-				to: 'https://app.earth-app.com/support',
+				to: 'https://support.earth-app.com',
+				statusCode: 301
+			}
+		},
+		'/ios': {
+			redirect: {
+				to: 'https://apps.apple.com/app/the-earth-app/id6771985151',
 				statusCode: 301
 			}
 		}
