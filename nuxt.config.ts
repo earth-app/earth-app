@@ -113,14 +113,58 @@ export default defineNuxtConfig({
 			}
 		]
 	],
+	site: {
+		url: 'https://earth-app.com',
+		name: 'The Earth App',
+		description: 'Explore with real people',
+		defaultLocale: 'en-US'
+	},
 	sitemap: {
-		sources: ['https://app.earth-app.com/__sitemap__/en-US.xml']
+		excludeAppSources: ['nuxt:route-rules'],
+		discoverImages: false,
+		urls: [
+			{
+				loc: '/',
+				changefreq: 'weekly',
+				priority: 1,
+				images: [
+					{
+						loc: 'https://cdn.earth-app.com/earth-app.png',
+						title: 'The Earth App',
+						caption: 'Explore with real people'
+					}
+				]
+			}
+		],
+		defaults: {
+			changefreq: 'monthly',
+			priority: 0.7
+		}
+	},
+	robots: {
+		mergeWithRobotsTxtPath: false,
+		groups: [
+			{
+				userAgent: ['*'],
+				allow: ['/']
+			}
+		]
 	},
 	schemaOrg: {
 		identity: defineOrganization({
 			name: 'The Earth App',
+			alternateName: 'Earth App',
+			description:
+				'The anti-doomscroll app to explore hobbies, sports, and passions with real people.',
 			logo: '/favicon.png',
-			url: 'https://earth-app.com'
+			url: 'https://earth-app.com',
+			sameAs: [
+				'https://github.com/earth-app',
+				'https://instagram.com/theearthapp',
+				'https://twitter.com/the_earth_app',
+				'https://youtube.com/@the_earth_app',
+				'https://patreon.com/gmitch215'
+			]
 		})
 	}
 });
