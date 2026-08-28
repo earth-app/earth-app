@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "bunx serve .output/public",
+    "test": "node scripts/copy-guard.mjs",
     "postinstall": "nuxt prepare",
     "prettier": "bunx prettier --write .",
     "prettier:check": "bunx prettier --check .",

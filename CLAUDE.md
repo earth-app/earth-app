@@ -15,6 +15,7 @@ This is the marketing site only. The actual web app lives in the sibling `crust`
 - `bun run dev` - dev server (`nuxi dev --public`)
 - `bun run build` / `bun run generate` - static build (CI runs `build`, uploads `./dist` to Pages)
 - `bun run prettier` / `bun run prettier:check` - format (CI gates on `prettier:check`; husky + lint-staged run it on commit)
+- `bun run test` - copy guard over `src/` (`scripts/copy-guard.mjs`, no test runner needed); CI gates on it
 
 ## Layout
 

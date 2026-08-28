@@ -19,6 +19,8 @@ jobs:
         run: bun install
       - name: Run Prettier
         run: bun run prettier:check
+      - name: Run Copy Guard
+        run: bun run test
 
   build:
     runs-on: ubuntu-latest
