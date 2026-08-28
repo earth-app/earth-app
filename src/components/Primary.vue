@@ -25,15 +25,10 @@
 				/>
 			</NuxtLink>
 			<h1
-				class="font-title text-center text-2xl md:text-3xl mb-2 mt-8 md:mt-8 lg:mt-0 hover:cursor-pointer"
+				class="font-title text-center text-balance text-2xl md:text-3xl mb-2 mt-8 md:mt-8 lg:mt-0 px-4 font-semibold hover:cursor-pointer hover:opacity-80 transition-opacity duration-300"
 				@click="goToApp"
 			>
-				Find your
-				<span
-					:style="{ color: currentRotation.color }"
-					class="font-semibold hover:opacity-80 transition-opacity duration-300"
-					>{{ currentRotation.text }}.</span
-				>
+				Explore what's actually around you.
 			</h1>
 			<h3 class="hover:text-primary transition font-medium">
 				<NuxtLink
@@ -101,28 +96,4 @@ onUnmounted(() => {
 function goToApp() {
 	navigateTo('https://app.earth-app.com', { external: true });
 }
-
-const rotations = [
-	{ text: 'Sport', color: '#FF6B6B' },
-	{ text: 'Friends', color: '#3F8A77' },
-	{ text: 'Calling', color: '#FFD93D' },
-	{ text: 'Favorite Things', color: '#6BCB77' },
-	{ text: 'Adventure', color: '#F7B801' },
-	{ text: 'Hobby', color: '#FF6F91' },
-	{ text: 'Passion', color: '#00B4D8' },
-	{ text: 'Curiosity', color: '#FF9671' },
-	{ text: 'Fun', color: '#2A9D8F' },
-	{ text: 'Excitement', color: '#E76F51' }
-];
-
-const currentRotationIndex = ref(Math.floor(Math.random() * rotations.length));
-const currentRotation = computed(() => rotations[currentRotationIndex.value]);
-
-onMounted(() => {
-	let idx = currentRotationIndex.value;
-	setInterval(() => {
-		idx = (idx + 1) % rotations.length;
-		currentRotationIndex.value = idx;
-	}, 2000);
-});
 </script>

@@ -25,145 +25,108 @@
 			>
 		</div>
 
-		<div class="flex flex-col items-start px-12 w-full mt-8">
+		<div class="flex flex-col items-start px-4 sm:px-12 w-full mt-8">
 			<div
 				v-for="(item, index) in items"
 				:key="index"
-				class="flex flex-col items-center"
+				class="flex flex-col items-center w-full"
 			>
-				<div class="flex gap-2 items-stretch justify-center my-2">
+				<div class="flex gap-3 items-stretch justify-start w-full my-2">
 					<div class="flex flex-col items-center gap-2 min-h-full">
-						<UPopover arrow>
-							<div class="flex flex-col items-center gap-1">
-								<LazyUBadge
-									:id="`tile-${index}`"
-									:icon="item.icon"
-									:color="
-										isCurrentStep(index) ? 'success' : item.completed ? 'warning' : 'secondary'
-									"
-									:variant="item.completed ? 'solid' : 'subtle'"
-									size="xl"
-									class="transition-colors duration-500"
-									hydrate-on-visible
-								/>
-
-								<span
-									v-if="item.reward"
-									class="text-xs opacity-70"
-									>+{{ item.reward }}</span
-								>
-							</div>
-							<template #content>
-								<div class="flex items-center justify-center p-4 max-w-72 gap-1">
-									<UIcon
-										:name="item.icon"
-										class="min-h-8 min-w-8 size-8 text-primary"
-									/>
-									<div class="flex flex-col ml-2">
-										<p class="text-sm opacity-90">{{ item.description }}</p>
-										<p
-											v-if="item.reward"
-											class="text-xs opacity-70 mt-1"
-										>
-											Reward: {{ item.reward }} Impact Points
-										</p>
-									</div>
-								</div>
-							</template>
-						</UPopover>
+						<UBadge
+							:id="`tile-${index}`"
+							:icon="item.icon"
+							:color="isCurrentStep(index) ? 'success' : item.completed ? 'warning' : 'secondary'"
+							:variant="item.completed ? 'solid' : 'subtle'"
+							size="xl"
+							class="transition-colors duration-500"
+							aria-hidden="true"
+						/>
 
 						<div
 							:class="[
-								'w-2 min-h-36 h-full rounded-full transition-colors duration-200',
-								Number(item.completed) ? 'bg-primary' : 'bg-gray-300'
+								'w-2 min-h-6 flex-1 rounded-full transition-colors duration-200',
+								item.completed ? 'bg-primary' : 'bg-muted'
 							]"
 						></div>
 					</div>
 
-					<div
-						class="flex flex-col items-start gap-1 transition-opacity duration-200"
-						:class="
-							Number(item.completed)
-								? 'opacity-70'
-								: Number(isCurrentStep(index))
-									? 'opacity-100'
-									: 'opacity-0'
-						"
-					>
-						<span class="text-sm font-medium">{{ item.title }}</span>
-						<p class="text-xs opacity-70 max-w-xs">{{ item.description }}</p>
+					<div class="flex flex-col items-start gap-1 flex-1">
+						<span
+							class="text-sm font-medium transition-opacity duration-200"
+							:class="item.revealed ? 'opacity-100' : 'opacity-60'"
+						>
+							{{ index + 1 }}. {{ item.title }}
+						</span>
 
-						<div class="flex gap-2 mt-2">
-							<UButton
-								v-if="isCurrentStep(index)"
-								color="success"
-								variant="soft"
-								trailing-icon="mdi:arrow-right"
-								size="sm"
-								@click="next"
-							>
-								{{
-									index === -1
-										? 'Start'
-										: currentIndex >= props.quest.steps.length - 1
-											? 'Finish'
-											: 'Next'
-								}}
-							</UButton>
-							<UButton
-								v-if="item.link"
-								color="info"
-								variant="soft"
-								trailing-icon="mdi:open-in-new"
-								size="sm"
-								:href="item.link"
-								target="_blank"
-							>
-								Visit
-							</UButton>
-							<UButton
-								v-else-if="item.type === 'take_photo'"
-								color="primary"
-								variant="soft"
-								icon="mdi:camera"
-								size="sm"
-								@click="openCamera(item.index)"
+						<template v-if="item.revealed">
+							<p class="text-xs opacity-70 max-w-xs">{{ item.description }}</p>
+
+							<div class="flex flex-wrap gap-2 mt-2">
+								<UButton
+									v-if="isCurrentStep(index)"
+									color="success"
+									variant="soft"
+									trailing-icon="mdi:arrow-right"
+									size="sm"
+									@click="next"
+								>
+									{{ currentIndex >= props.quest.steps.length - 1 ? 'Finish' : 'Next' }}
+								</UButton>
+								<UButton
+									v-if="item.link"
+									color="info"
+									variant="soft"
+									trailing-icon="mdi:open-in-new"
+									size="sm"
+									:href="item.link"
+									target="_blank"
+								>
+									Visit
+								</UButton>
+								<UButton
+									v-else-if="item.type === 'take_photo'"
+									color="primary"
+									variant="soft"
+									icon="mdi:camera"
+									size="sm"
+									@click="openCamera(item.index)"
+									:disabled="!isCurrentStep(index)"
+								>
+									Snap a Picture
+								</UButton>
+							</div>
+
+							<textarea
+								v-if="item.type === 'type_text'"
+								type="text"
+								placeholder="I'm currently feeling..."
+								wrap="hard"
+								aria-label="Share your thoughts"
 								:disabled="!isCurrentStep(index)"
-							>
-								Snap a Picture
-							</UButton>
-						</div>
+								class="w-full h-full text-sm min-w-60 my-2 p-2 border border-gray-300 rounded-md resize-none"
+							/>
 
-						<textarea
-							v-if="item.type === 'type_text'"
-							type="text"
-							placeholder="I'm currently feeling..."
-							wrap="hard"
-							:disabled="!isCurrentStep(index)"
-							class="w-full h-full text-sm min-w-60 my-2 p-2 border border-gray-300 rounded-md resize-none"
-						/>
-
-						<!-- Captured photo thumbnail -->
-						<img
-							v-if="item.type === 'take_photo' && currentImages[item.index]"
-							:src="currentImages[item.index]"
-							:alt="item.title"
-							class="mt-2 w-full max-h-48 object-cover rounded-lg border border-gray-200"
-						/>
+							<img
+								v-if="item.type === 'take_photo' && currentImages[item.index]"
+								:src="currentImages[item.index]"
+								:alt="item.title"
+								class="mt-2 w-full max-h-48 object-cover rounded-lg border border-gray-200"
+							/>
+						</template>
 					</div>
 				</div>
 			</div>
 
-			<div class="flex flex-col items-center min-h-36 gap-1">
-				<LazyUBadge
+			<div class="flex gap-3 items-center w-full">
+				<UBadge
 					icon="mdi:medal-outline"
 					color="warning"
 					variant="solid"
 					size="xl"
-					class="self-center"
-					hydrate-on-visible
+					aria-hidden="true"
 				/>
-				<span class="text-xs opacity-70">+{{ props.quest.reward }}</span>
+				<span class="text-sm font-medium">Quest Complete</span>
 			</div>
 		</div>
 
@@ -445,7 +408,9 @@ const items = computed(() => {
 			...step,
 			icon: getStepIcon(step.type),
 			index,
-			completed: currentIndex.value > index
+			completed: currentIndex.value > index,
+			// titles always read; the copy under one opens as the tour reaches it
+			revealed: currentIndex.value >= index
 		};
 	});
 });
