@@ -37,7 +37,7 @@ jobs:
       - name: Install Dependencies
         run: bun install
       - name: Build Website
-        run: bun run build
+        run: bun run generate
       - name: Archive Site
         id: deployment
         uses: actions/upload-pages-artifact@v5
