@@ -20,7 +20,7 @@
     "@nuxt/ui": "^4.10.0",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/robots": "^6.1.2",
-    "@nuxtjs/sitemap": "^8.2.2",
+    "@nuxtjs/sitemap": "^9.0.0",
     "@tailwindcss/vite": "^4.3.3",
     "nuxt": "^4.4.8",
     "nuxt-schema-org": "^6.2.3",
